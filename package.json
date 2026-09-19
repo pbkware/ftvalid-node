@@ -1,0 +1,41 @@
+{
+  "name": "ftvalid",
+  "version": "0.1.0",
+  "description": "Fielded Text file validator",
+  "homepage": "https://github.com/pbkware/ftvalid-node#readme",
+  "bugs": {
+    "url": "https://github.com/pbkware/ftvalid-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbkware/ftvalid-node.git"
+  },
+  "license": "MIT",
+  "author": "Paul Klink",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "ftvalid": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "fielded-text",
+    "csv",
+    "validator",
+    "cli"
+  ],
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "node --test tests/*.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@pbkware/fielded-text-node": "^0.1.1"
+  }
+}
+
