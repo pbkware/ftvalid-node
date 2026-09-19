@@ -531,7 +531,20 @@ export function main() {
 }
 
 // Ensure that the main function is called only when this module is executed directly, not when imported.
-const isMainModule = process.argv[1] !== undefined && import.meta.url === `file://${process.argv[1]}`;
-if (isMainModule) {
+// Resolve real paths (not just string URLs) so this also works when invoked via a symlinked bin (e.g. after npm install/link).
+function isMainModuleInvocation() {
+  if (process.argv[1] === undefined) {
+    return false;
+  }
+  try {
+    const invokedPath = fs.realpathSync(process.argv[1]);
+    const modulePath = fs.realpathSync(new URL(import.meta.url));
+    return invokedPath === modulePath;
+  } catch {
+    return false;
+  }
+}
+
+if (isMainModuleInvocation()) {
   main();
 }
