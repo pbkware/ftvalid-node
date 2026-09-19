@@ -1,6 +1,6 @@
 {
   "name": "@pbkware/ftvalid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fielded Text file validator",
   "homepage": "https://github.com/pbkware/ftvalid-node#readme",
   "bugs": {
