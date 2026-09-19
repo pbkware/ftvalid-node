@@ -5,7 +5,7 @@ ftvalid is a Node.JS command line program which can be used to validate the form
 ## Installation
 
 ```bash
-npm install -g ftvalid
+npm install -g @pbkware/ftvalid
 ```
 
 ## Usage
